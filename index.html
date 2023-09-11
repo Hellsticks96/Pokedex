@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.rtl.css">
+    <script src="./js/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <title>Pokedex</title>
+    <link rel="icon" href="./img/pokeball.png">
+</head>
+
+<body onload="getPokeInfo()">
+
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <h1>Pocket-Dex</h1>
+                <img src="./img/pokeball.png">
+            </div>
+            <div class="searchbar">
+                <input id="pokesearch" type="text" placeholder="Search for Pokemon...">
+                <button class="btn btn-secondary" onclick="searchPokemon()">Search</button>
+            </div>
+
+        </div>
+
+    </header>
+
+    <div id="detailedpokeinfo-background" class="detailedpokeinfo-background hide">
+
+    </div>
+
+    <div class="hide" id="detailedpokeinfo">
+        <div id="pokeHeader">
+            <img class="pointer" onclick="closeDetails()" id="closebutton" src="./img/close-window-32.ico">
+            <h1 id="pokeName"></h1>
+            <span id="pokenumber"></span>
+            <div class="individualpic-container">
+                <img id="pokeImage">
+            </div>
+            <img class="pointer" onclick="previousPokemon()" id="previouspoke" src="./img/previous-arrow.ico"
+                style="position: absolute; left: 24px; top: 190px">
+            <img class="pointer" onclick="nextPokemon()" id="nextpoke" src="./img/next-arrow.ico"
+                style="position: absolute; right: 24px; top: 190px">
+        </div>
+        <div id="pokeInfo">
+            <div style="padding: 8px; height: 700px;">
+                <div id="typeabilitycontainer">
+                    <div id="typecontainer">
+                        <b>Type:</b>
+                        <div id="individualpoketype"></div>
+                    </div>
+                    <div id="abilitycontainer">
+                        <b>Abilities:</b>
+                        <div id="pokeabilities"></div>
+                    </div>
+                </div>
+                <div id="statscontainer">
+                    <h2>Stats:</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pokedexbody">
+        <div id="pokedexheader">
+
+        </div>
+
+        <div id="pokedexcontent">
+
+        </div>
+
+        <div id="pokedexfooter">
+
+        </div>
+
+        <button class="btn btn-secondary" onclick="loadMorePokemon()">Load more...</button>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="link-container">
+                <a href="">Impressum</a>
+            </div>
+
+            <span>&copy; Kaleo GbR</span>
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
